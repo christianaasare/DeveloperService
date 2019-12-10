@@ -28,38 +28,41 @@ public class DevDaoImpl implements DevDAO {
         return this.jdbcTemplate.query("select * from developers", BeanPropertyRowMapper.newInstance(DevTO.class));
     }
 
-//    @ApiOperation("GET DEVELOPERS BY ID")
-//    @CrossOrigin(origins = "*", allowedHeaders = "*")
-//    @GetMapping("/DevSearch")
-//    @Override
-//    public List<DevTO> getDevByID(){
-//        return
-//    }
 
     @ApiOperation("ADD DEVELOPERS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping("/AddDev")
+    @PostMapping("/Dev/AddDev")
     @Override
-    public void addDev(@RequestBody Map<String, String> requestData) {
+    public void addDev(@RequestBody Map<String, String> addDev) {
         try{
             jdbcTemplate.update(
                     "insert into developers(name,phone,address,email) values(?,?,?,?)",
-                    new Object[]{requestData.get("name"),requestData.get("phone"), requestData.get("address"), requestData.get("email")}
+                    addDev.get("name"),addDev.get("phone"), addDev.get("address"), addDev.get("email")
             );
-
         } catch (Exception e){
             System.out.println("Exeception Occured at | " + e.getMessage());
         }
     }
 
-    @ApiOperation("DELETE DEVELOPERS")
+    @ApiOperation("DELETE DEVELOPERS BY ID")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/DeleteDev")
+    @DeleteMapping("/Dev/DeleteDev/{id}")
     @Override
-    public void deleteDev(Integer DevId) {
-
+    public void deleteDev(@PathVariable("id") Integer developer_id) {
+        jdbcTemplate.update(
+                "delete from develops where develop_id = ?", developer_id);
     }
 
+    @ApiOperation("UPDATE A DEVELOPER")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PutMapping("/Dev/update/{id}")
+    @Override
+    public void updateDev(Integer developer_id, DevTO dev){
+        this.jdbcTemplate.update(
+                "update developers set name = ?, phone = ?, address = ?, email = ?, where developer_id = ?",
+                dev.getDevName(), dev.getPhone(), dev.getAddress(), dev.getEmail()
+        );
+    }
 
 
 }
