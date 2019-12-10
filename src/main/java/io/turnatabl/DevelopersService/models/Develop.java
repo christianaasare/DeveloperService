@@ -1,8 +1,6 @@
-package io.turnatabl.DevelopersService.transferObjects;
+package io.turnatabl.DevelopersService.models;
 
-import java.util.List;
-
-public class DevTO {
+public class Develop {
     private String name;
     private int developer_id;
     private String phone;
@@ -10,7 +8,7 @@ public class DevTO {
     private String address;
 
 
-    public DevTO(){
+    public Develop(){
 
     }
 
@@ -49,5 +47,16 @@ public class DevTO {
     }
 
     public void setAddress(String address) {this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Develop{" +
+                "name='" + name + '\'' +
+                ", developer_id=" + developer_id +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }

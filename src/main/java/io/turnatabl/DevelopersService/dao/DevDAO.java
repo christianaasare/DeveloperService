@@ -1,15 +1,22 @@
 package io.turnatabl.DevelopersService.dao;
 
-import io.turnatabl.DevelopersService.transferObjects.DevTO;
+import io.turnatabl.DevelopersService.models.Develop;
 
 import java.util.List;
 import java.util.Map;
 
 public interface DevDAO {
- List<DevTO> getAllDev();
-// List<DevTO> getDevByID();
- void addDev(Map<String, String> addDev);
+
+ List<Develop> getAllDev();
+
+ Develop getDevByID(Integer developer_id);
+
+ void addDev(Develop develop);
+
  void deleteDev(Integer developer_id);
- void updateDev(Integer developer_id, DevTO dev);
+
+ void updateDev(Integer developer_id, Develop dev);
+
+ List<Develop> searchDev(String name);
 
 }
