@@ -7,6 +7,7 @@ public class DevTO {
     private int DevID;
     private String Phone;
     private String Email;
+    private String Address;
 
 
     public DevTO(){
@@ -41,5 +42,12 @@ public class DevTO {
     }
 
     public void setEmail(String email) {this.Email = email;
+    }
+
+    public String getAddress() {
+        return Address;
+    }
+
+    public void setAddress(String address) {this.Address = address;
     }
 }
