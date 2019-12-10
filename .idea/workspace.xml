@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="27c2992c-61fa-4aba-97d9-42325ab2a211" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/controllers/DevDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/controllers/DevDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/transferObjects/DevTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/transferObjects/DevTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
