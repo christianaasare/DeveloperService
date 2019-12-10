@@ -27,7 +27,7 @@ public class DevDaoImpl implements DevDAO {
     @GetMapping("/Dev")
     @Override
     public List<DevTO> getAllDev(){
-        return this.jdbcTemplate.query("select * from projects", BeanPropertyRowMapper.newInstance(DevTO.class));
+        return this.jdbcTemplate.query("select * from developers", BeanPropertyRowMapper.newInstance(DevTO.class));
     }
 
 //    @ApiOperation("GET DEVELOPERS BY ID")
