@@ -24,15 +24,15 @@ insert into projects (project_id,title,description) values (2,'MicroServices','M
 
 create table developers(
 	developer_id serial primary key,
-	name text not null,
+	dev_name text not null,
 	phone text not null,
 	email text not null,
 	address text not null
 );
 
 
-insert into developers (name,phone,email,address) values ('Dennis Bill','05833838', 'bill@gmail.com', 'Accra');
-insert into developers (name,phone,email,address) values ('Francis Billa','06478955', 'francis@gmail.com', 'Achimota');
+insert into developers (dev_name,phone,email,address) values ('Dennis Bill','05833838', 'bill@gmail.com', 'Accra');
+insert into developers (dev_name,phone,email,address) values ('Francis Billa','06478955', 'francis@gmail.com', 'Achimota');
 
 
 create table currentprojects(
