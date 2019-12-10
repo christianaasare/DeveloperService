@@ -7,9 +7,7 @@ import io.turnatabl.DevelopersService.transferObjects.DevTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -40,10 +38,18 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("ADD DEVELOPERS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/AddDev")
+    @PostMapping("/AddDev")
     @Override
-    public void addDev(Map<String, String> addDev) {
+    public void addDev(@RequestBody Map<String, String> requestData) {
+        try{
+            jdbcTemplate.update(
+                    "insert into developers(name,phone,address,email) values(?,?,?,?)",
+                    new Object[]{requestData.get("name"),requestData.get("phone"), requestData.get("address"), requestData.get("email")}
+            );
 
+        } catch (Exception e){
+            System.out.println("Exeception Occured at | " + e.getMessage());
+        }
     }
 
     @ApiOperation("DELETE DEVELOPERS")
