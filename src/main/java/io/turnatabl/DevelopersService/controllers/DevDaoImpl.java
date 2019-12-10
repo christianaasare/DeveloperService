@@ -21,7 +21,7 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("GET ALL DEVELOPERS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/Dev")
+    @GetMapping("/dev")
     @Override
     public List<Develop> getAllDev(){
         return this.jdbcTemplate.query("select * from developers", BeanPropertyRowMapper.newInstance(Develop.class));
@@ -30,7 +30,7 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("ADD DEVELOPERS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping("/Dev/AddDev")
+    @PostMapping("/dev/addDev")
     @Override
     public void addDev(@RequestBody Develop dev) {
             jdbcTemplate.update(
@@ -42,7 +42,7 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("DELETE DEVELOPERS BY ID")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @DeleteMapping("/Dev/DeleteDev/{id}")
+    @DeleteMapping("/dev/deleteDev/{id}")
     @Override
     public void deleteDev(@PathVariable("id") Integer developer_id) {
         jdbcTemplate.update(
@@ -51,7 +51,7 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("UPDATE A DEVELOPER")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PutMapping("/Dev/update/{id}")
+    @PutMapping("/dev/update/{id}")
     @Override
     public void updateDev(Integer developer_id, Develop dev){
         this.jdbcTemplate.update(
