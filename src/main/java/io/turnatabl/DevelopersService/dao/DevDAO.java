@@ -9,6 +9,7 @@ public interface DevDAO {
  List<DevTO> getAllDev();
 // List<DevTO> getDevByID();
  void addDev(Map<String, String> addDev);
- void deleteDev(Integer DevId);
+ void deleteDev(Integer developer_id);
+ void updateDev(Integer developer_id, DevTO dev);
 
 }
