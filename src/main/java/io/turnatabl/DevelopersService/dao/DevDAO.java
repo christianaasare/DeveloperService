@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface DevDAO {
  List<DevTO> getAllDev();
- List<DevTO> getDevByID();
+// List<DevTO> getDevByID();
  void addDev(Map<String, String> addDev);
  void deleteDev(Integer DevId);
 

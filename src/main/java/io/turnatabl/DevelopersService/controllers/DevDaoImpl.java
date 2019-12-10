@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import io.turnatabl.DevelopersService.dao.DevDAO;
 import io.turnatabl.DevelopersService.transferObjects.DevTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,23 +20,23 @@ import java.util.Map;
 public class DevDaoImpl implements DevDAO {
 
     @Autowired
-    //private JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     @ApiOperation("GET ALL DEVELOPERS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/Dev")
     @Override
     public List<DevTO> getAllDev(){
-        return
+        return this.jdbcTemplate.query("select * from projects", BeanPropertyRowMapper.newInstance(DevTO.class));
     }
 
-    @ApiOperation("GET DEVELOPERS BY ID")
-    @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/DevSearch")
-    @Override
-    public List<DevTO> getDevByID(){
-        return
-    }
+//    @ApiOperation("GET DEVELOPERS BY ID")
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @GetMapping("/DevSearch")
+//    @Override
+//    public List<DevTO> getDevByID(){
+//        return
+//    }
 
     @ApiOperation("ADD DEVELOPERS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
