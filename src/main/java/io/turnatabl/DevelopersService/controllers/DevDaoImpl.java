@@ -66,7 +66,7 @@ public class DevDaoImpl implements DevDAO {
     @GetMapping("/dev/{emp_id}")
     @Override
     public Develop getDevByID(@PathVariable("emp_id") Integer emp_id) {
-        List<Develop> develops = jdbcTemplate.query("select * from employees where emp_id = 1",
+        List<Develop> develops = jdbcTemplate.query("select * from employees where emp_id = ?",
                 new Object[]{emp_id},
                 BeanPropertyRowMapper.newInstance(Develop.class));
         return develops.get(0);
