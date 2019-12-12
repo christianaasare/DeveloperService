@@ -16,14 +16,14 @@ public class Develop {
         return name;
     }
 
-    public void setDevName(String devName) {this.name = name;
+    public void setDevName(String dev_name) {this.name = dev_name;
     }
 
     public int getDevID() {
         return developer_id;
     }
 
-    public void setDevID(int devID) {this.developer_id = developer_id;
+    public void setDevID(int developer_id) {this.developer_id = developer_id;
     }
 
 
@@ -52,7 +52,7 @@ public class Develop {
     @Override
     public String toString() {
         return "Develop{" +
-                "name='" + name + '\'' +
+                "dev_name='" + name + '\'' +
                 ", developer_id=" + developer_id +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
