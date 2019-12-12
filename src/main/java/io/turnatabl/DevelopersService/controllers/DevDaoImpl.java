@@ -35,7 +35,7 @@ public class DevDaoImpl implements DevDAO {
     public void addDev(@RequestBody Develop dev) {
             jdbcTemplate.update(
                     "insert into employees(emp_name,emp_phone,emp_address,emp_email) values(?,?,?,?) where emp_role = 'admin' is unknown",
-                    dev.getName(), dev.getPhone(), dev.getEmail(), dev.getAddress()
+                    dev.getEmp_name(), dev.getEmp_phone(), dev.getEmp_email(), dev.getEmp_address()
             );
 
     }
@@ -56,7 +56,7 @@ public class DevDaoImpl implements DevDAO {
     public void updateDev(Integer developer_id, Develop dev){
         this.jdbcTemplate.update(
                 "update employees set emp_name = ?, emp_phone = ?, emp_address = ?, emp_email = ?, where emp_id = ?",
-                dev.getName(), dev.getPhone(), dev.getAddress(), dev.getEmail()
+                dev.getEmp_name(), dev.getEmp_phone(), dev.getEmp_address(), dev.getEmp_email()
         );
     }
 
