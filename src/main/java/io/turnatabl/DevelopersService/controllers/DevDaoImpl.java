@@ -30,7 +30,11 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("ADD DEVELOPERS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
+
     @PostMapping("/dev/add")
+
+    @PostMapping("/dev/addDev")
+
     @Override
     public void addDev(@RequestBody Develop dev) {
             jdbcTemplate.update(
