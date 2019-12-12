@@ -79,7 +79,7 @@ public class DevDaoImpl implements DevDAO {
     @GetMapping("/dev/search/{emp_name}")
     @Override
     public List<Develop> searchDev(@PathVariable String emp_name) {
-        return this.jdbcTemplate.query("select * from employees where name like ?",
+        return this.jdbcTemplate.query("select * from employees where emp_name like ?",
                 new Object[]{emp_name + "%"},
                 BeanPropertyRowMapper.newInstance(Develop.class));
     }
