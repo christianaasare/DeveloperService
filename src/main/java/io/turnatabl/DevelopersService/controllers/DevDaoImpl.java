@@ -44,9 +44,9 @@ public class DevDaoImpl implements DevDAO {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @DeleteMapping("/dev/deleteDev/{id}")
     @Override
-    public void deleteDev(@PathVariable("id") Integer developer_id) {
+    public void deleteDev(@PathVariable("id") Integer emp_id) {
         jdbcTemplate.update(
-                "delete from employees where emp_id = ?", developer_id);
+                "delete from employees where emp_id = ?", emp_id);
     }
 
     @ApiOperation("UPDATE A DEVELOPER")
@@ -65,9 +65,9 @@ public class DevDaoImpl implements DevDAO {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/dev/{dev_id}")
     @Override
-    public Develop getDevByID(@PathVariable Integer develop_id) {
+    public Develop getDevByID(@PathVariable Integer emp_id) {
         return (Develop) this.jdbcTemplate.query("select * from employees where emp_id = 1",
-                new Object[]{develop_id},
+                new Object[]{emp_id},
                 BeanPropertyRowMapper.newInstance(Develop.class));
     }
 
@@ -77,9 +77,9 @@ public class DevDaoImpl implements DevDAO {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/dev/search/{name}")
     @Override
-    public List<Develop> searchDev(@PathVariable String name) {
+    public List<Develop> searchDev(@PathVariable String emp_name) {
         return this.jdbcTemplate.query("select * from employees where name like ?",
-                new Object[]{name + "%"},
+                new Object[]{emp_name + "%"},
                 BeanPropertyRowMapper.newInstance(Develop.class));
     }
 

@@ -9,14 +9,14 @@ public interface DevDAO {
 
  List<Develop> getAllDev();
 
- Develop getDevByID(Integer id);
+ Develop getDevByID(Integer emp_id);
 
  void addDev(Develop develop);
 
- void deleteDev(Integer id);
+ void deleteDev(Integer emp_id);
 
  void updateDev(Integer id, Develop dev);
 
- List<Develop> searchDev(String name);
+ List<Develop> searchDev(String emp_name);
 
 }

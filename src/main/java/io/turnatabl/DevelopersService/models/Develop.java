@@ -23,7 +23,7 @@ public class Develop {
 //        return emp_id;
 //    }
 
-    public void setEmp_id(int id) {this.emp_id = id;
+    public void setEmp_id(int id) {this.emp_id = emp_id;
     }
 
 
@@ -52,8 +52,8 @@ public class Develop {
     @Override
     public String toString() {
         return "Develop{" +
-                "dev_name='" + emp_name + '\'' +
-//                ", developer_id=" + emp_id +
+                "emp_name='" + emp_name + '\'' +
+                ", emp_id=" + emp_id +
                 ", phone='" + emp_phone + '\'' +
                 ", email='" + emp_email + '\'' +
                 ", address='" + emp_address + '\'' +
