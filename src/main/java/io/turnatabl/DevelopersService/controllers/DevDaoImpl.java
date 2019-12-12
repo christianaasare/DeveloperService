@@ -33,7 +33,7 @@ public class DevDaoImpl implements DevDAO {
     @PostMapping("/add")
     @Override
     public void addDev(@RequestBody Develop dev) {
-            jdbcTemplate.update(
+            this.jdbcTemplate.update(
                     "insert into employees(emp_name,emp_phone,emp_address,emp_email) values(?,?,?,?) where emp_role = 'admin' is unknown",
                     dev.getEmp_name(), dev.getEmp_phone(), dev.getEmp_email(), dev.getEmp_address()
             );
@@ -65,10 +65,11 @@ public class DevDaoImpl implements DevDAO {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/dev/{dev_id}")
     @Override
-    public Develop getDevByID(@PathVariable Integer emp_id) {
-        return (Develop) this.jdbcTemplate.query("select * from employees where emp_id = 1",
+    public Develop getDevByID(@PathVariable("emp_id") Integer emp_id) {
+        List<Develop> develops = jdbcTemplate.query("select * from employees where emp_id = 1",
                 new Object[]{emp_id},
                 BeanPropertyRowMapper.newInstance(Develop.class));
+        return develops.get(0);
     }
 
 
