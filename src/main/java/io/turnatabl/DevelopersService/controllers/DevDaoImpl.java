@@ -34,7 +34,7 @@ public class DevDaoImpl implements DevDAO {
     @Override
     public void addDev(@RequestBody Develop dev) {
             this.jdbcTemplate.update(
-                    "insert into employees(emp_name,emp_phone,emp_address,emp_email) values(?,?,?,?) where emp_role = 'admin' is unknown",
+                    "insert into employees(emp_name,emp_phone,emp_address,emp_email) values(?,?,?,?)",
                     dev.getEmp_name(), dev.getEmp_phone(), dev.getEmp_email(), dev.getEmp_address()
             );
 
