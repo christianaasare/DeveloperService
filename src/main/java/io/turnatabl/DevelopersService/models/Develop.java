@@ -23,7 +23,7 @@ public class Develop {
 //        return emp_id;
 //    }
 
-    public void setEmp_id(int id) {this.emp_id = id;
+    public void setEmp_id(int id) {this.emp_id = emp_id;
     }
 
 
