@@ -2,7 +2,7 @@ package io.turnatabl.DevelopersService.models;
 
 public class Develop {
     private String emp_name;
-    private int emp_id;
+    private Integer emp_id;
     private String emp_phone;
     private String emp_email;
     private String emp_address;
