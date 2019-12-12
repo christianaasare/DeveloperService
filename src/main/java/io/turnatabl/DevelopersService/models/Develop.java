@@ -2,7 +2,7 @@ package io.turnatabl.DevelopersService.models;
 
 public class Develop {
     private String name;
-    private int developer_id;
+    private int id;
     private String phone;
     private String email;
     private String address;
@@ -16,14 +16,14 @@ public class Develop {
         return name;
     }
 
-    public void setDevName(String dev_name) {this.name = dev_name;
+    public void setDevName(String name) {this.name = name;
     }
 
     public int getDevID() {
-        return developer_id;
+        return id;
     }
 
-    public void setDevID(int developer_id) {this.developer_id = developer_id;
+    public void setDevID(int id) {this.id = id;
     }
 
 
@@ -53,7 +53,7 @@ public class Develop {
     public String toString() {
         return "Develop{" +
                 "dev_name='" + name + '\'' +
-                ", developer_id=" + developer_id +
+                ", developer_id=" + id +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
