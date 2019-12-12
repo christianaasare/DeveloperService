@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27c2992c-61fa-4aba-97d9-42325ab2a211" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/controllers/DevDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/controllers/DevDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/dao/DevDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/dao/DevDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/transferObjects/DevTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/models/Develop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/models/Develop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/turnatabl/DevelopersService/models/Develop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/TPMS.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/TPMS.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +22,48 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DevelopersService" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DevelopersService" type="f1a62948:ProjectNode" />
+                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DevelopersService" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DevelopersService" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="DevelopersService" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,6 +93,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RunManager" selected="Application.DevelopersServiceApplication">
@@ -64,6 +109,44 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="DeveloperService [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeveloperService [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="DeveloperService [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -84,8 +167,31 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="DevelopersServiceApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;io.turnatabl.DevelopersService.DevelopersServiceApplicationTests&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DevelopersServiceApplicationTests" />
+        <item itemvalue="Gradle.DeveloperService [bootRun]" />
+        <item itemvalue="Gradle.DeveloperService [build]" />
         <item itemvalue="Gradle.DeveloperService [dependencies]" />
         <item itemvalue="Application.DevelopersServiceApplication" />
       </list>
@@ -139,26 +245,34 @@
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
     <state x="1888" y="276" width="312" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1575899579702" />
+    <state x="1839" y="242" width="419" height="348" key="DBNavigator.ConnectionAuthenticationDialog" timestamp="1576153227535">
+      <screen x="1366" y="0" width="1366" height="768" />
+    </state>
+    <state x="1839" y="242" width="419" height="348" key="DBNavigator.ConnectionAuthenticationDialog/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1576153227535" />
     <state x="1582" y="42" width="924" height="691" key="DBNavigator.ProjectSettingsDialog" timestamp="1575977938118">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
     <state x="1582" y="42" width="924" height="691" key="DBNavigator.ProjectSettingsDialog/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1575977938118" />
-    <state width="1320" height="90" key="GridCell.Tab.0.bottom" timestamp="1575976417041">
+    <state width="1320" height="153" key="GridCell.Tab.0.bottom" timestamp="1576153305055">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
-    <state width="1320" height="90" key="GridCell.Tab.0.bottom/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1575976417041" />
-    <state width="1320" height="90" key="GridCell.Tab.0.center" timestamp="1575976417041">
+    <state width="1320" height="153" key="GridCell.Tab.0.bottom/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1576153305055" />
+    <state width="1320" height="153" key="GridCell.Tab.0.center" timestamp="1576153305055">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
-    <state width="1320" height="90" key="GridCell.Tab.0.center/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1575976417041" />
-    <state width="1320" height="90" key="GridCell.Tab.0.left" timestamp="1575976417041">
+    <state width="1320" height="153" key="GridCell.Tab.0.center/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1576153305055" />
+    <state width="1320" height="153" key="GridCell.Tab.0.left" timestamp="1576153305055">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
-    <state width="1320" height="90" key="GridCell.Tab.0.left/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1575976417041" />
-    <state width="1320" height="90" key="GridCell.Tab.0.right" timestamp="1575976417041">
+    <state width="1320" height="153" key="GridCell.Tab.0.left/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1576153305055" />
+    <state width="1320" height="153" key="GridCell.Tab.0.right" timestamp="1576153305055">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
-    <state width="1320" height="90" key="GridCell.Tab.0.right/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1575976417041" />
+    <state width="1320" height="153" key="GridCell.Tab.0.right/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1576153305055" />
+    <state x="1697" y="211" key="com.intellij.ide.util.TipDialog" timestamp="1576150830210">
+      <screen x="1366" y="0" width="1366" height="768" />
+    </state>
+    <state x="1697" y="211" key="com.intellij.ide.util.TipDialog/0.27.1366.741/1366.0.1366.768@1366.0.1366.768" timestamp="1576150830210" />
     <state x="1713" y="167" key="run.anything.popup" timestamp="1575910637489">
       <screen x="1366" y="0" width="1366" height="768" />
     </state>
