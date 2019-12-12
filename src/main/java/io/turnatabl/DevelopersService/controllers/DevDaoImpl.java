@@ -42,16 +42,16 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("DELETE DEVELOPERS BY ID")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @DeleteMapping("/dev/deleteDev/{id}")
+    @DeleteMapping("/dev/deleteDev/{emp_id}")
     @Override
-    public void deleteDev(@PathVariable("id") Integer emp_id) {
+    public void deleteDev(@PathVariable("emp_id") Integer emp_id) {
         jdbcTemplate.update(
                 "delete from employees where emp_id = ?", emp_id);
     }
 
     @ApiOperation("UPDATE A DEVELOPER")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PutMapping("/dev/update/{id}")
+    @PutMapping("/dev/update/{emp_id}")
     @Override
     public void updateDev(Integer developer_id, Develop dev){
         this.jdbcTemplate.update(
@@ -63,7 +63,7 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("GET A DEVELOPER BY ID")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/dev/{dev_id}")
+    @GetMapping("/dev/{emp_id}")
     @Override
     public Develop getDevByID(@PathVariable("emp_id") Integer emp_id) {
         List<Develop> develops = jdbcTemplate.query("select * from employees where emp_id = 1",
@@ -76,7 +76,7 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("SEARCH FOR DEVELOP")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/dev/search/{name}")
+    @GetMapping("/dev/search/{emp_name}")
     @Override
     public List<Develop> searchDev(@PathVariable String emp_name) {
         return this.jdbcTemplate.query("select * from employees where name like ?",
