@@ -29,7 +29,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @Override
     public void addHours(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
-                "insert into hours(hours,date) values(?,?,?)",
+                "insert into projectlogging(hours,date) values(?,?)",
                  projectLogging.getHours(), projectLogging.getDate()
         );
     }
@@ -40,7 +40,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @GetMapping("/log")
     @Override
     public List<ProjectLogging> getAllProjectLogging(){
-        return this.jdbcTemplate.query("select * from projectLogging",
+        return this.jdbcTemplate.query("select * from projectlogging",
                 BeanPropertyRowMapper.newInstance(ProjectLogging.class));
     }
 
