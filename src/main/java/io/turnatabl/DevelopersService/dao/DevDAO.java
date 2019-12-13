@@ -19,4 +19,6 @@ public interface DevDAO {
 
  List<Develop> searchDev(String emp_name);
 
+ void logHours(Integer emp_id, Integer project_id);
+
 }
