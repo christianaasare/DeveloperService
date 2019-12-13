@@ -85,4 +85,11 @@ public class DevDaoImpl implements DevDAO {
 
     }
 
+    @ApiOperation("Loggin Hours")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/dev/hours/{emp_id}")
+    @Override
+    public void logHours(@RequestBody Integer emp_id, @PathVariable Integer project_id) {
+
+    }
 }
