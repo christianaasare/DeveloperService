@@ -24,8 +24,9 @@ public class DevDaoImpl implements DevDAO {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/dev")
     @Override
-    public List<Develop> getAllDev(){
-        return this.jdbcTemplate.query("select emp_name, emp_phone, emp_email, emp_address from employees where emp_role = 'Developer'", BeanPropertyRowMapper.newInstance(Develop.class));
+    public List<Develop> getAllDev() {
+        return this.jdbcTemplate.query("select emp_name, emp_phone, emp_email, emp_address, emp_id from employees " +
+                "where emp_role = 'Developer'", BeanPropertyRowMapper.newInstance(Develop.class));
     }
 
 
@@ -105,5 +106,7 @@ public class DevDaoImpl implements DevDAO {
                 BeanPropertyRowMapper.newInstance(Develop.class));
 
     }
+
+
 
 }
