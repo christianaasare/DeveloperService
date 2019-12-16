@@ -25,7 +25,7 @@ public class DevDaoImpl implements DevDAO {
     @GetMapping("/dev")
     @Override
     public List<Develop> getAllDev(){
-        return this.jdbcTemplate.query("select * from employees where emp_role = 'admin' is unknown", BeanPropertyRowMapper.newInstance(Develop.class));
+        return this.jdbcTemplate.query("select * from employees where emp_role = 'Developer'", BeanPropertyRowMapper.newInstance(Develop.class));
     }
 
 
