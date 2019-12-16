@@ -21,6 +21,6 @@ public interface DevDAO {
 
  void logHours(Integer emp_id, Integer project_id);
 
- Develop getDevByEmail(String emp_email);
+ List<Develop> getDevByEmail(String emp_email);
 
 }

@@ -64,7 +64,7 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("GET A DEVELOPER BY ID")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/dev/{emp_id}")
+    @GetMapping("/dev/id/{emp_id}")
     @Override
     public Develop getDevByID(@PathVariable("emp_id") Integer emp_id) {
         List<Develop> develops = jdbcTemplate.query("select * from employees where emp_id = ?",
@@ -97,13 +97,17 @@ public class DevDaoImpl implements DevDAO {
 
     @ApiOperation("GET A EMPLOYEE BY EMAIL")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/dev/{emp_email}")
+    @GetMapping("/dev/email/{emp_email}")
     @Override
-    public Develop getDevByEmail(@PathVariable("emp_email") String emp_email) {
-        List<Develop> develops = jdbcTemplate.query("select emp_role from employees where emp_email = ?",
-                new Object[]{emp_email},
+    public List<Develop> getDevByEmail(@PathVariable String emp_email) {
+        return this.jdbcTemplate.query("select emp_role from employees where emp_email like ?",
+                new Object[]{emp_email + "%"},
                 BeanPropertyRowMapper.newInstance(Develop.class));
-        return develops.get(0);
+
+//        List<Develop> develops = jdbcTemplate.query("select emp_role from employees where emp_email = ?",
+//                new Object[]{emp_email},
+//                BeanPropertyRowMapper.newInstance(Develop.class));
+//        return develops.get(0);
     }
 
 }
