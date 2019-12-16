@@ -25,8 +25,8 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @Override
     public void addHours(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
-                "insert into projectlogging(title,hours,date) values(?,?,?::date)",
-                 projectLogging.getTitle(), projectLogging.getHours(), projectLogging.getDate()
+                "insert into projectlogging(title,hours,date, emp_id, project_id) values(?,?,?::date,?,?)",
+                 projectLogging.getTitle(), projectLogging.getHours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id()
         );
     }
 
