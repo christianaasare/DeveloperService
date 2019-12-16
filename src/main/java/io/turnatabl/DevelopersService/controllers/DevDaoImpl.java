@@ -19,6 +19,7 @@ public class DevDaoImpl implements DevDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+
     @ApiOperation("GET ALL DEVELOPERS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/dev")
