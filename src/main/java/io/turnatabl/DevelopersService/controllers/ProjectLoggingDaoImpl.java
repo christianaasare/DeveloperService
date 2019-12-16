@@ -8,10 +8,7 @@ import io.turnatabl.DevelopersService.models.ProjectLogging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,7 +21,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
 
     @ApiOperation("ADD HOURS")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/addHours")
+    @PostMapping("/addHours")
     @Override
     public void addHours(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
