@@ -93,4 +93,17 @@ public class DevDaoImpl implements DevDAO {
     public void logHours(@RequestBody Integer emp_id, @PathVariable Integer project_id) {
 
     }
+
+
+    @ApiOperation("GET A EMPLOYEE BY EMAIL")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/dev/{emp_email}")
+    @Override
+    public Develop getDevByEmail(@PathVariable("emp_email") String emp_email) {
+        List<Develop> develops = jdbcTemplate.query("select emp_role from employees where emp_email = ?",
+                new Object[]{emp_email},
+                BeanPropertyRowMapper.newInstance(Develop.class));
+        return develops.get(0);
+    }
+
 }
