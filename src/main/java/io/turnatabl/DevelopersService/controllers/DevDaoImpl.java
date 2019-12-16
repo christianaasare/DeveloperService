@@ -100,14 +100,10 @@ public class DevDaoImpl implements DevDAO {
     @GetMapping("/dev/email/{emp_email}")
     @Override
     public List<Develop> getDevByEmail(@PathVariable String emp_email) {
-        return this.jdbcTemplate.query("select emp_role from employees where emp_email like ?",
+        return this.jdbcTemplate.query("select * from employees where emp_email like ?",
                 new Object[]{emp_email + "%"},
                 BeanPropertyRowMapper.newInstance(Develop.class));
 
-//        List<Develop> develops = jdbcTemplate.query("select emp_role from employees where emp_email = ?",
-//                new Object[]{emp_email},
-//                BeanPropertyRowMapper.newInstance(Develop.class));
-//        return develops.get(0);
     }
 
 }
