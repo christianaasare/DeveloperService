@@ -6,6 +6,7 @@ public class Develop {
     private String emp_phone;
     private String emp_email;
     private String emp_address;
+    private String emp_role;
 
 
     public Develop(){
@@ -48,6 +49,14 @@ public class Develop {
     }
 
     public void setEmp_address(String emp_address) {this.emp_address = emp_address;
+    }
+
+    public String getEmp_role() {
+        return emp_role;
+    }
+
+    public void setEmp_role(String emp_role) {
+        this.emp_role = emp_role;
     }
 
     @Override
