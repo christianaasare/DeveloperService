@@ -24,8 +24,7 @@ public class Develop {
         return emp_id;
     }
 
-
-    public void setEmp_id(int emp_id) {this.emp_id = emp_id;
+    public void setEmp_id(int emp_id) { this.emp_id = emp_id;
     }
 
 
