@@ -47,8 +47,8 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @Override
     public void addSick(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
-                "insert into projectlogging(project_hours,date, emp_id, project_id,volunteering_hours,sick) values(0,?::date,?,0,0,'SICK')",
-                projectLogging.getProject_hours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id(), projectLogging.getVolunteering_hours(), projectLogging.getSick()
+                "insert into projectlogging(project_hours,date, emp_id,volunteering_hours,sick) values(0,?::date,?,0,'SICK')",
+                projectLogging.getProject_hours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getVolunteering_hours(), projectLogging.getSick()
         );
     }
 
