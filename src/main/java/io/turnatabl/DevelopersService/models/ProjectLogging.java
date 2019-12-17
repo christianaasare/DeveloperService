@@ -2,11 +2,13 @@ package io.turnatabl.DevelopersService.models;
 
 
 public class ProjectLogging {
-    private String title;
     private String date;
-    private int hours;
+    private int project_hours;
     private int emp_id;
     private int project_id;
+    private String vacation;
+    private String sick;
+    private int volunteering_hours;
 
 
     public ProjectLogging(){
@@ -21,12 +23,12 @@ public class ProjectLogging {
         this.date = date;
     }
 
-    public int getHours() {
-        return hours;
+    public int getProject_hours() {
+        return project_hours;
     }
 
-    public void setHours(int hours) {
-        this.hours = hours;
+    public void setProject_hours(int project_hours) {
+        this.project_hours = project_hours;
     }
 
     public int getEmp_id() {
@@ -45,11 +47,15 @@ public class ProjectLogging {
         this.project_id = project_id;
     }
 
-    public String getTitle() {
-        return title;
-    }
+    public String getVacation() { return vacation; }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public void setVacation(String vacation) { this.vacation = vacation; }
+
+    public String getSick() { return sick; }
+
+    public void setSick(String sick) { this.sick = sick; }
+
+    public int getVolunteering_hours() { return volunteering_hours;  }
+
+    public void setVolunteering_hours(int volunteering_hours) { this.volunteering_hours = volunteering_hours; }
 }

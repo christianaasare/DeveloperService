@@ -25,8 +25,8 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @Override
     public void addHours(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
-                "insert into projectlogging(title,hours,date, emp_id, project_id) values(?,?,?::date,?,?)",
-                 projectLogging.getTitle(), projectLogging.getHours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id()
+                "insert into projectlogging(project_hours,date, emp_id, project_id,volunteering_hours) values(?,?::date,?,?,?)",
+                 projectLogging.getProject_hours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id(), projectLogging.getVolunteering_hours()
         );
     }
 
@@ -38,6 +38,29 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     public List<ProjectLogging> getAllProjectLogging(){
         return this.jdbcTemplate.query("select * from projectlogging",
                 BeanPropertyRowMapper.newInstance(ProjectLogging.class));
+    }
+
+
+    @ApiOperation("ADD SICK")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/addSick")
+    @Override
+    public void addSick(@RequestBody ProjectLogging projectLogging) {
+        this.jdbcTemplate.update(
+                "insert into projectlogging(project_hours,date, emp_id, project_id,volunteering_hours,sick) values(0,?::date,?,0,0,'SICK')",
+                projectLogging.getProject_hours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id(), projectLogging.getVolunteering_hours(), projectLogging.getSick()
+        );
+    }
+
+    @ApiOperation("ADD VACATION")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @PostMapping("/addVacation")
+    @Override
+    public void addVacation(@RequestBody ProjectLogging projectLogging) {
+        this.jdbcTemplate.update(
+                "insert into projectlogging(project_hours,date, emp_id, project_id,volunteering_hours,vacation) values(0,?::date,?,0,0,'VACATION')",
+                projectLogging.getProject_hours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id(), projectLogging.getVolunteering_hours(), projectLogging.getVacation()
+        );
     }
 
 }
