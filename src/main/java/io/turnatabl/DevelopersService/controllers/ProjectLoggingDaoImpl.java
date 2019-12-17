@@ -58,8 +58,8 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @Override
     public void addVacation(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
-                "insert into projectlogging(project_hours,date, emp_id, project_id,volunteering_hours,vacation) values(0,?::date,?,0,0,'VACATION')",
-                projectLogging.getProject_hours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id(), projectLogging.getVolunteering_hours(), projectLogging.getVacation()
+                "insert into projectlogging(date, emp_id,vacation) values(?::date,?,?)",
+                projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getVacation()
         );
     }
 
