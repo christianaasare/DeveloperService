@@ -26,7 +26,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @Override
     public void addHours(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
-                "insert into projectlogging(project_hours,date, emp_id, project_id,volunteering_hours) values(?,?::date,?,?,?)",
+                "insert into projectlogging(project_hours,logged_date, emp_id, project_id,volunteering_hours) values(?,?::date,?,?,?)",
                  projectLogging.getProject_hours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id(), projectLogging.getVolunteering_hours()
         );
     }
@@ -48,7 +48,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @Override
     public void addSick(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
-                "insert into projectlogging(date, emp_id,sick) values(?::date,?,?)",
+                "insert into projectlogging(logged_date, emp_id,sick) values(?::date,?,?)",
                projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getSick()
         );
     }
@@ -59,10 +59,27 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @Override
     public void addVacation(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
-                "insert into projectlogging(date, emp_id,vacation) values(?::date,?,?)",
+                "insert into projectlogging(logged_date, emp_id,vacation) values(?::date,?,?)",
                 projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getVacation()
         );
     }
+
+//    @ApiOperation("GET ASSIGNED TASK BY DEVELOPER_ID")
+//    @CrossOrigin(origins = "*", allowedHeaders = "*")
+//    @GetMapping("/dev/assign/{emp_id}")
+//    @Override
+//    public Develop getTaskByID(@PathVariable("emp_id") Integer emp_id) {
+////        return this.jdbcTemplate.query("SELECT projects.title from projects INNER JOIN currentprojects ON " +
+////                        "currentprojects.project_id = projects.project_id INNER JOIN employees ON currentprojects.emp_id" +
+////                        " = employees.emp_id where employees.emp_id = ?",
+////                new Object[]{emp_id + "%"},
+////                BeanPropertyRowMapper.newInstance(Develop.class));
+//        List<Develop> develops = jdbcTemplate.query("SELECT projects.title from projects INNER JOIN currentprojects ON currentprojects.project_id = projects.project_id INNER JOIN employees ON currentprojects.emp_id = employees.emp_id where employees.emp_id = ?",
+//                new Object[]{emp_id},
+//                BeanPropertyRowMapper.newInstance(Develop.class));
+//        return develops.get(0);
+//
+//    }
 
 
 }
