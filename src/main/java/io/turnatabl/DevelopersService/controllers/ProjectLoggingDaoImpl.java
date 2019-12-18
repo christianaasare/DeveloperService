@@ -36,7 +36,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @GetMapping("/log")
     @Override
     public List<ProjectLogging> getAllProjectLogging(){
-        return this.jdbcTemplate.query("select * from projectlogging",
+        return this.jdbcTemplate.query("select projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id",
                 BeanPropertyRowMapper.newInstance(ProjectLogging.class));
     }
 
