@@ -111,11 +111,18 @@ public class DevDaoImpl implements DevDAO {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/dev/assign/{emp_id}")
     @Override
-    public List<Develop> getTaskByID(@PathVariable Integer emp_id) {
-        return this.jdbcTemplate.query("SELECT projects.title from projects INNER JOIN currentprojects ON " +
-                        "currentprojects.project_id = projects.project_id INNER JOIN employees ON currentprojects.emp_id = employees.emp_id where employees.emp_id = ?",
-                new Object[]{emp_id + "%"},
+    public Develop getTaskByID(@PathVariable("emp_id") Integer emp_id) {
+//        return this.jdbcTemplate.query("SELECT projects.title from projects INNER JOIN currentprojects ON " +
+//                        "currentprojects.project_id = projects.project_id INNER JOIN employees ON currentprojects.emp_id" +
+//                        " = employees.emp_id where employees.emp_id = ?",
+//                new Object[]{emp_id + "%"},
+//                BeanPropertyRowMapper.newInstance(Develop.class));
+        List<Develop> develops = jdbcTemplate.query("SELECT projects.title from projects INNER JOIN currentprojects ON \" +\n" +
+                        "                        \"currentprojects.project_id = projects.project_id INNER JOIN employees ON currentprojects.emp_id\" +\n" +
+                        "                        \" = employees.emp_id where employees.emp_id = ?",
+                new Object[]{emp_id},
                 BeanPropertyRowMapper.newInstance(Develop.class));
+        return develops.get(0);
 
     }
 
