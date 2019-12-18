@@ -24,6 +24,6 @@ public interface DevDAO {
 
  List<Develop> getDevByEmail(String emp_email);
 
-  List<Develop> getTaskByID(String emp_id);
+  List<Develop> getTaskByID(Integer emp_id);
 
 }
