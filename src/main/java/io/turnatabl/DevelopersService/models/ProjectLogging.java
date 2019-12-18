@@ -2,6 +2,7 @@ package io.turnatabl.DevelopersService.models;
 
 
 public class ProjectLogging {
+    private String emp_name;
     private String title;
     private String logged_date;
     private int project_hours;
@@ -66,5 +67,13 @@ public class ProjectLogging {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getEmp_name() {
+        return emp_name;
+    }
+
+    public void setEmp_name(String emp_name) {
+        this.emp_name = emp_name;
     }
 }
