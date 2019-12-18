@@ -1,6 +1,7 @@
 package io.turnatabl.DevelopersService.dao;
 
 import io.turnatabl.DevelopersService.models.Develop;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -22,5 +23,7 @@ public interface DevDAO {
  void logHours(Integer emp_id, Integer project_id);
 
  List<Develop> getDevByEmail(String emp_email);
+
+  List<Develop> getTaskByID(String emp_id);
 
 }
