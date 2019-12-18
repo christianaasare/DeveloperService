@@ -120,7 +120,7 @@ public class DevDaoImpl implements DevDAO {
         List<Develop> develops = jdbcTemplate.query("SELECT projects.title from projects INNER JOIN currentprojects ON currentprojects.project_id = projects.project_id INNER JOIN employees ON currentprojects.emp_id = employees.emp_id where employees.emp_id = ?",
                 new Object[]{emp_id},
                 BeanPropertyRowMapper.newInstance(Develop.class));
-        return develops.get(0);
+        return develops.get(emp_id);
 
     }
 
