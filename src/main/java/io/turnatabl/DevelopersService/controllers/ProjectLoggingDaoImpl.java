@@ -67,12 +67,16 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/projectlogged/dev/{emp_id}")
     @Override
-    public ProjectLogging getCurrentProjectByDevId(@PathVariable("emp_id") Integer emp_id) {
+    public List<ProjectLogging> getCurrentProjectByDevId(@PathVariable("emp_id") Integer emp_id) {
 
-        List<ProjectLogging>  projectLoggings = jdbcTemplate.query("select projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id INNER JOIN employees on employees.emp_id =projectlogging.emp_id where employees.emp_id = ?",
+//        List<ProjectLogging>  projectLoggings = jdbcTemplate.query("select projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id INNER JOIN employees on employees.emp_id =projectlogging.emp_id where employees.emp_id = ?",
+//                new Object[]{emp_id},
+//                BeanPropertyRowMapper.newInstance(ProjectLogging.class));
+//        return projectLoggings.get(0);
+
+        return this.jdbcTemplate.query("select projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id INNER JOIN employees on employees.emp_id =projectlogging.emp_id where employees.emp_id = ?",
                 new Object[]{emp_id},
                 BeanPropertyRowMapper.newInstance(ProjectLogging.class));
-        return projectLoggings.get(0);
     }
 
 
