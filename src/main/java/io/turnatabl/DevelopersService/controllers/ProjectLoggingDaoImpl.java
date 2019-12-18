@@ -36,7 +36,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @GetMapping("/log")
     @Override
     public List<ProjectLogging> getAllProjectLogging(){
-        return this.jdbcTemplate.query("select employees.emp_name projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id",
+        return this.jdbcTemplate.query("select employees.emp_name, projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id",
                 BeanPropertyRowMapper.newInstance(ProjectLogging.class));
     }
 
@@ -63,7 +63,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
         );
     }
 
-    @ApiOperation("Get a assigned project logging for a Developer id")
+    @ApiOperation("Get an assigned project logging for a Developer By id")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/projectlogged/dev/{emp_id}")
     @Override
