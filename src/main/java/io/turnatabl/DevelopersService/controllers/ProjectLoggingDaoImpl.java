@@ -36,7 +36,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     @GetMapping("/log")
     @Override
     public List<ProjectLogging> getAllProjectLogging(){
-        return this.jdbcTemplate.query("select projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id",
+        return this.jdbcTemplate.query("select employees.emp_name projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id",
                 BeanPropertyRowMapper.newInstance(ProjectLogging.class));
     }
 
@@ -62,6 +62,22 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
                 projectLogging.getLogged_date(), projectLogging.getEmp_id(), projectLogging.getVacation()
         );
     }
+
+    @ApiOperation("Get a assigned project logging for a Developer id")
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/projectlogged/dev/{emp_id}")
+    @Override
+    public ProjectLogging getCurrentProjectByDevId(@PathVariable("emp_id") Integer emp_id) {
+
+        List<ProjectLogging>  projectLoggings = jdbcTemplate.query("select projectlogging.projectlogging_id, projectlogging.logged_date, projectlogging.project_hours, projectlogging.emp_id, projectlogging.project_id, projectlogging.vacation, projectlogging.sick, projectlogging.volunteering_hours, projects.title from projectlogging INNER JOIN projects ON projects.project_id = projectlogging.project_id INNER JOIN employees on employees.emp_id =projectlogging.emp_id where employees.emp_id = ?",
+                new Object[]{emp_id},
+                BeanPropertyRowMapper.newInstance(ProjectLogging.class));
+        return projectLoggings.get(0);
+    }
+
+
+
+
 
 //    @ApiOperation("GET ASSIGNED TASK BY DEVELOPER_ID")
 //    @CrossOrigin(origins = "*", allowedHeaders = "*")
