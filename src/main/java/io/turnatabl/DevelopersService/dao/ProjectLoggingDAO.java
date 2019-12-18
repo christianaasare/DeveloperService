@@ -14,6 +14,6 @@ public interface ProjectLoggingDAO {
     void addVacation(ProjectLogging projectLogging);
     void addSick(ProjectLogging projectLogging);
 
-    ProjectLogging getCurrentProjectByDevId(Integer emp_id);
+    List<ProjectLogging> getCurrentProjectByDevId(Integer emp_id);
 //     getTaskByID(Integer emp_id);
 }
