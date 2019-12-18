@@ -2,7 +2,7 @@ package io.turnatabl.DevelopersService.models;
 
 
 public class ProjectLogging {
-    private String date;
+    private String logged_date;
     private int project_hours;
     private int emp_id;
     private int project_id;
@@ -15,12 +15,12 @@ public class ProjectLogging {
 
     }
 
-    public String getDate() {
-        return date;
+    public String getLogged_date() {
+        return logged_date;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setLogged_date(String logged_date) {
+        this.logged_date = logged_date;
     }
 
     public int getProject_hours() {

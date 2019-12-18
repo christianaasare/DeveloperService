@@ -4,7 +4,6 @@ package io.turnatabl.DevelopersService.controllers;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.turnatabl.DevelopersService.dao.ProjectLoggingDAO;
-import io.turnatabl.DevelopersService.models.Develop;
 import io.turnatabl.DevelopersService.models.ProjectLogging;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -27,7 +26,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     public void addHours(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
                 "insert into projectlogging(project_hours,logged_date, emp_id, project_id,volunteering_hours) values(?,?::date,?,?,?)",
-                 projectLogging.getProject_hours(), projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getProject_id(), projectLogging.getVolunteering_hours()
+                 projectLogging.getProject_hours(), projectLogging.getLogged_date(), projectLogging.getEmp_id(), projectLogging.getProject_id(), projectLogging.getVolunteering_hours()
         );
     }
 
@@ -49,7 +48,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     public void addSick(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
                 "insert into projectlogging(logged_date, emp_id,sick) values(?::date,?,?)",
-               projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getSick()
+               projectLogging.getLogged_date(), projectLogging.getEmp_id(), projectLogging.getSick()
         );
     }
 
@@ -60,7 +59,7 @@ public class ProjectLoggingDaoImpl implements ProjectLoggingDAO {
     public void addVacation(@RequestBody ProjectLogging projectLogging) {
         this.jdbcTemplate.update(
                 "insert into projectlogging(logged_date, emp_id,vacation) values(?::date,?,?)",
-                projectLogging.getDate(), projectLogging.getEmp_id(), projectLogging.getVacation()
+                projectLogging.getLogged_date(), projectLogging.getEmp_id(), projectLogging.getVacation()
         );
     }
 
