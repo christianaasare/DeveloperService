@@ -26,7 +26,7 @@ public class ReportDaoImp implements ReportDAO {
     @GetMapping("/report")
     @Override
     public List<Report> getAllReport(){
-        return this.jdbcTemplate.query("select * from report",
+        return this.jdbcTemplate.query("select * from report order by logged_date",
                 BeanPropertyRowMapper.newInstance(Report.class));
     }
 
