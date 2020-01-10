@@ -21,9 +21,9 @@ public class ReportDaoImp implements ReportDAO {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    @ApiOperation("GET ALL PROJECTS LOGS")
+    @ApiOperation("GET ALL REPORT")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @GetMapping("/log")
+    @GetMapping("/report")
     @Override
     public List<Report> getAllReport(){
         return this.jdbcTemplate.query("select * from report",
