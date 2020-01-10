@@ -2,8 +2,8 @@ package io.turnatabl.DevelopersService.models;
 
 public class Report {
     private String logged_date;
-    private int sum;
-
+    private int total_project_hours;
+    private int total_volunteering_hours;
     public Report(){
     }
 
@@ -15,11 +15,19 @@ public class Report {
         this.logged_date = logged_date;
     }
 
-    public int getSum() {
-        return sum;
+    public int getTotal_project_hours() {
+        return total_project_hours;
     }
 
-    public void setSum(int sum) {
-        this.sum = sum;
+    public void setTotal_project_hours(int total_project_hours) {
+        this.total_project_hours = total_project_hours;
+    }
+
+    public int getTotal_volunteering_hours() {
+        return total_volunteering_hours;
+    }
+
+    public void setTotal_volunteering_hours(int total_volunteering_hours) {
+        this.total_volunteering_hours = total_volunteering_hours;
     }
 }
